@@ -1,0 +1,36 @@
+<Background>
+
+    In the light of the cutting-edge theory of machine learning, we developed a virus classification based on the Stacking algorithm(VCStacking) from the perspective of ensemble learning. 
+    First of all, according to the Baltimore virus classification system, we classified the viruses data of the National Center for Biotechnology Information into six groups. 
+Then,we analyzed the correlation between different classifiers by correlation analysis and selected three classifiers whose relationship was the weakest, 
+including SVM, Random Forests, and AdaBoost, as the base classifiers of the Stacking algorithm. Meanwhile, we chose the Logistic Regression model as the meta classifier of the Stacking algorithm. 
+Afterwards, we adjusted the parameters through the grid search algorithm to find the optimal parameters. 
+Finally, an algorithm evaluation metric with Macro-Accuracy, Macro-Precision, Macro-Recall, and Macro-F1 score was utilized to assess the performance of the proposed model. 
+    The results show that the VCStacking, which merged multiple single models, obtain the best Macro-Accuracy, Macro-Precision, Macro-Recall, and Macro-F1 score.
+ So, the proposed VCStacking outperforms the state-of-the-art machine learning algorithm and has the potential ability to classify different virus groups.
+
+<Data Description>
+
+1. The whole-genomes in our dataset was downloaded from the Nucleotide Database Support Center of the National Center for Biotechnology Information (https://www.ncbi.nlm.nih.gov/) in January 2019. 
+
+2. The process of downloading gene sequences: 
+
+    According to the latest introduction of the virus classification system in the tenth report of the International Committee on Taxonomy of Viruses, we learned that viruses could be roughly classified into six groups 
+based on the Baltimore virus classification system. These six groups include double-stranded DNA (dsDNA), single-stranded DNA (ssDNA), double-stranded RNA (dsRNA), justice single-stranded RNA ((+)ss RNA),
+antisense single-stranded RNA ((-)ss RNA) and Retrovirus (Retro).
+    Then, in the database of the National Center for Biotechnology Information,  we searched for Family when limited Species, Molecule types, and Sequence length. 
+Furthermore, selected viruses and genomic DNA/RNA with sequence lengths ranging from hundreds to thousands of BP.
+Finally, we downloaded 82960 gene sequences, including all six groups of viruses. The specific quantity of each type of virus data was shown as follows. 
+    -------------------------
+     Group	       Quantity
+    -------------------------
+    dsDNA	        11860
+    dsRNA	        15800
+    Retro	        15800
+    ssDNA	          7900
+    (-)ssRNA      15800
+    (+)ssRNA     15800
+    -------------------------
+
+3. Due to the limitation of upload file size, we uploaded files of both different types of virus whole-genomes and preprocessed data separately.
+    The files of virus whole-genomes is zip type. The files of preprocessed data is mat type. 
