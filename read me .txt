@@ -34,3 +34,20 @@ Finally, we downloaded 82960 gene sequences, including all six groups of viruses
 
 3. Due to the limitation of upload file size, we uploaded files of both different types of virus whole-genomes and preprocessed data separately.
     The files of virus whole-genomes is zip type. The files of preprocessed data is mat type. 
+
+<Code Introduction>
+
+1. Runtime environment
+    To use this program, the environment of Python 3.7 are needed at least. And, you need to install some packages, such as sklearn, numpy, pandas, scipy.io, xgboost, lightgbm and time. 
+
+2. Data import
+    Please import the training set at each program "train.mat" and the test set at "test.mat". Enter the variable name of the training set at "train" and the test set at "test.mat".
+It should be noted that the dataset imported in this program must be the mat type, and ensure that the variable name of dataset corresponds to the input name. 
+
+3. The function of program
+    The file of VC_Chi2 used to analyze the correlation between various algorithms; the file of VCStacking is a virus classification based on the Stacking algorithm 
+which applied SVM, Random Forests, and AdaBoost as the base classifiers and Logistic Regression model as the meta classifier. 
+
+4. The output of results
+    The prediction results of each base classifier are saved in the variables y_RF_pred, y_SVM_pred, and y_Adb_pred respectively. The prediction result of VCStacking is saved in the variables y_sta_pred. 
+After the prediction result, the confusion matrix and evaluation indicators of each corresponding algorithm are shown immediately.
